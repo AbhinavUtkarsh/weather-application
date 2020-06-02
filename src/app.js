@@ -5,7 +5,7 @@ const forecast = require(path.join(__dirname, "/utils/forecast"))
 const geocode = require(path.join(__dirname, "/utils/geocode"))
 
 const app = express()
-const port = (process.env.PORT || 3016)
+const port = (process.env.PORT || 3001)
 
 // Define paths for Express config
 const publicDir = path.join(__dirname, "../public")
@@ -24,21 +24,21 @@ app.use(express.static(publicDir))
 app.get("", (req, res) => {
     res.render('index', {
         title: "Weather",
-        name: "Pri"
+        name: "Abhinav"
     })
 })
 
 app.get("/about", (req, res) => {
     res.render("about", {
         title: "About Me",
-        name: "Pri"
+        name: "Abhinav"
     })
 })
 
 app.get("/help", (req, res) => {
     res.render("help", {
         title: "Help",
-        name: "Pri"
+        name: "Abhinav"
     })
 })
 
@@ -70,7 +70,7 @@ app.get("/weather", (req, res) => {
 app.get("/help/*", (req, res) => {
     res.render("404", {
         title: "404",
-        name: "Pri",
+        name: "Abhinav",
         error: "help article not found"
     })
 })
@@ -78,7 +78,7 @@ app.get("/help/*", (req, res) => {
 app.get("*", (req, res) => {
     res.render("404", {
         title: "404",
-        name: "Pri",
+        name: "Abhinav",
         error: "page not found"
     })
 })
